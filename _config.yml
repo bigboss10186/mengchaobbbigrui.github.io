@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 孟超的博客, mengchaobbbigrui, 孟超"
 url: "http://mengchaobbbigrui.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/mengchaobbbigrui.github.io.git" # you code repository
+github_repo: "https://github.com/mengchaobbbigrui.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -18,12 +18,11 @@ sidebar-avatar: /img/myself.jpg    # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
 zhihu_username:     mengchaobbbigrui
 github_username:    mengchaobbbigrui
 facebook_username:     Chao Meng
 jianshu_username:   86e7cbec3b3a
-#twitter_username:   qiubaiying
+
 
 
 
