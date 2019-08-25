@@ -9,9 +9,6 @@ catalog: 	 true
 tags:
     - Jeston nano
 ---
-# jeston nano
-
-NVIDIA jeston nano是一个小的，功能强大的计算机，可以让你在并行运行多个神经网络对像图像分类，目标检测，分割和语音处理应用。所有这些都在一个易于使用的平台上运行，最小功率为5w,使用jeston nano可以使用NVIDIA配套的[Jetpack4.2](https://developer.nvidia.com/embedded/jetpack) 以及[Isaac sdk](https://developer.nvidia.com/isaac/downloads) ,网上有这两个工具的详细介绍，我就不一一介绍。
 
 # jetbot
 
