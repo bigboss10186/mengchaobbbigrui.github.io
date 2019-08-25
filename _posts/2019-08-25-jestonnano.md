@@ -15,7 +15,7 @@ tags:
 我主要介绍jetbot这个基于jeston nano的小车，接下来一一介绍我制作整个小车的经历。
 
 
-![jetbot](https://i.loli.net/2019/08/25/BrfzdY58C9mwFXV.jpg)
+![jetbot](https://sm.ms/image/QIjTsiMElJ8hZyU)
 
 ## 1 购物
 
