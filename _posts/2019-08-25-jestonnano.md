@@ -13,8 +13,10 @@ tags:
 # jetbot
 
 我主要介绍jetbot这个基于jeston nano的小车，接下来一一介绍我制作整个小车的经历。
-![jetbot](https://i.loli.net/2019/08/25/BrfzdY58C9mwFXV.jpg)
+```
 
+![jetbot](https://i.loli.net/2019/08/25/BrfzdY58C9mwFXV.jpg)
+```
 ## 1 购物
 
 [购物链接](https://github.com/open-ai-robot/awesome-nvidia-jetson/wiki)
