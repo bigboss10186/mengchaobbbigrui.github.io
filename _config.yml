@@ -1,13 +1,13 @@
 # Site settings
-title: 孟超
-SEOTitle: 孟超的博客 | 孟超
+title: 王雨
+SEOTitle: 王雨的博客 | 王雨
 header-img: img/post-bg-desk.jpg
 email: mengchaobbbigrui@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 孟超的博客, mengchaobbbigrui, 孟超"
-url: "http://mengchaobbbigrui.github.io"          # your host, for absolute URL
+keyword: "BY, BY Blog, 王雨的博客"
+url: "https://bigboss10186.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/mengchaobbbigrui.github.io.git" # you code repository
+github_repo: "https://bigboss10186.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -18,10 +18,8 @@ sidebar-avatar: /img/myself.jpg    # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-zhihu_username:     mengchaobbbigrui
-github_username:    mengchaobbbigrui
-facebook_username:     Chao Meng
-jianshu_username:   86e7cbec3b3a
+zhihu_username:     bigboss
+github_username:    bigboss
 
 
 
@@ -99,9 +97,9 @@ service-worker: true
 friends: [
     {
         title: "GitHub",
-        href: "http://github.com/mengchaobbbigrui"
+        href: "https://github.com/bigboss10186"
     },{
         title: "简书·BY",
-        href: "http://www.jianshu.com/u/86e7cbec3b3a"
+        href: " "
     }
 ]
