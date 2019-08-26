@@ -1,0 +1,121 @@
+# kaya制作精讲
+
+关于kaya的制作官网上给的制作过程很少，我的制作过程也是充满了坎坷，仅仅是复现出官方给出的宣传效果就用了我一个多月的时间，这段时间遇到很多困难，期间一度有这种困难根本无法解决的想法，但是不断地尝试过后还是得以解决。
+
+## kaya介绍
+
+kaya是一款相对于jetbot制作起来更加昂贵的机器人，它能充分的展示Isaac sdk在jetson nano上的能力以及灵活自如的与其他的相关算法的结合，它有三个万向轮以至于它可以向各个方向移动，摄像头是英特尔的深度相机Realsense-d435i，这能够帮助kaya用3D的方式观察到它的周围，车载IMU和车轮马达的位置反馈提供准确的里程表信息，Jetson nano内部可以插入网卡使其具有无线vifi和蓝牙的功能，使用无线wifi与主机连接同一vifi用来观察kaya内部程序运行情况，蓝牙可用于连接无线手柄，控制kaya的移动，便于实现相关功能。
+
+
+
+![kaya](https://i.loli.net/2019/08/26/xBbLctRIPSr13NZ.jpg)
+
+
+
+# kaya制作
+
+### （1）3D打印
+
+制作首先考虑到3D打印的问题，最好自己能有一台3D打印机，如果没有的话可以去淘宝上面找打印店，材料方面PLA即可，如果有更高要求可以用树脂，但是价格会高出许多。颜色因人而异，不影响后面的制作流程。关于3D打印的材料，接下来给出在制作过程中需要下载的文件的汇总。
+
+[文件汇总](https://developer.nvidia.com/isaac/downloads)
+
+在这里面能够找到3D打印的全部零件的文件，这下面列出来的是要打印三份的文件，其他的文件都要打印1份，这一定要格外注意。
+
+![打印3份](https://i.loli.net/2019/08/26/6UiLEIGtMBjPK5p.png)
+
+这最后面的Part13是我自己画的文件，原因是因为找不到10*10的铝型材，我就自己画了一个相同大小尺寸的长方体来代替（我实在想不出用什么办法来代替了），在上面还要打上孔，打孔的位置我就不一一陈述了，如果大家想用和我一样的方法，建议打印出来后确定孔的位置，然后用电钻在上面钻孔，这样误差率更低一些，当然能够买到10 * 10mm的铝型材才是最好的选择。
+
+### (2)材料购买
+
+接下来为大家一一总结我选购的物品
+
+1. Jetson nono                    //这个不用多说
+
+2. [内存卡](https://m.tb.cn/h.e9SJIdZ?sm=52a5e8 )
+3. [网卡](https://m.tb.cn/h.ekWLv5G?sm=fe8611 )
+4. 摄像头                             //Intel RealSense Depth Camera D435（我用的是d435i，使用起来完全一样）
+5. [IMU](https://m.tb.cn/h.ekWLa52?sm=56259d)
+6. [舵机](https://m.tb.cn/h.e9RTjSW?sm=cb9ef3)
+7. [U2D2](https://m.tb.cn/h.ekN8psw?sm=1ccc45 )
+8. [电源集线器](https://m.tb.cn/h.ekVhZ92?sm=c53703 )
+9. [万向轮](https://m.tb.cn/h.e9R6wd1?sm=0d2356)
+10. [电源](https://m.tb.cn/h.ekN91r3?sm=e48b4c)
+11. [电源充电器](https://m.tb.cn/h.e9v88px?sm=aee8f8)
+12. [降压器-降至12V5A](https://m.tb.cn/h.ekV8mc3?sm=5cae8c) 
+13. 降压器                                //这个要降至5V6A，这个要自己选购，只要参数对应就不会有大的问题
+14. 螺丝及相关的线                //这个参考[官方材料数据](https://docs.nvidia.com/isaac/isaac/doc/tutorials/assemble_kaya.html),里面的螺丝大部分为m3，配以相应的螺母，至于内六角无           所谓，线和一些接线端子看自己接线需求适当购买
+15. [风扇](https://m.tb.cn/h.ekVOUQm?sm=8cc04b)
+16. ps4手柄
+
+## （3）组装
+
+下面给大家接线原理图
+
+![原路图](https://i.loli.net/2019/08/26/FsI1ZTS9Ngi5RJG.png)
+
+组装相信大家比较容易完成，如果有疑问点击[参考](https://docs.nvidia.com/isaac/isaac/doc/tutorials/assemble_kaya.html)。
+
+在组装的过程中只要不出现电源正负极接反一般不会出现大的损坏，如果那里报错就多找找原因，接下来分享一副我做出机器人大部分的图片。
+
+
+
+![制作过程图](https://i.loli.net/2019/08/26/aBm2uvJ9lntAQEy.jpg)
+
+
+
+## （4）前期准备
+
+### 第一步是安装jetpack4.2
+
+jetson nano的安装比较tx2等会比较方便，只需刷新镜像即可
+
+首先下载[jetpack](https://developer.nvidia.com/embedded/jetpack)
+
+然后下载[etcher](https://www.balena.io/etcher/)
+
+接下来需要将内存卡用读卡器连接至电脑，用etcher选择刷新镜像，然后选择jetpack文件即可，接下来将jetson nano连接电源和屏幕，应该会设置一些系统相关的设置，接下来就可以正常使用了。
+
+### 第二部是熟悉如何部署应用到nano上面
+
+```
+bob@desktop:~/isaac$  ./engine/build/deploy.sh --remote_user <username_on_robot> -p //apps/samples/stereo_dummy:stereo_dummy-pkg -d jetpack42 -h <robot_ip>
+```
+
+这里面--remote_user <username_on_robot>的意思是nano上面的用户名，<robot_ip>指的是nano上面的ip，ip可以通过
+
+```ifconfig -a```
+
+来查看，这样你就实现了把已经写完的程序部署到nano上面,接下来是运行，在文件对应的文件夹里面运行
+
+```./apps/samples/stereo_dummy/stereo_dummy```
+
+里面stereo_dummy是一个例子
+
+### 第三部是安装深度相机相关的驱动
+
+首先安装相关文件，在终端中输入
+
+```git clone https://github.com/JetsonHacksNano/installLibrealsense.git```
+
+这样会克隆驱动相关文件，然后进入到文件夹目录中，继续终端输入
+
+```./installLibrealsense.sh --bulid_with_cuda```
+
+```./installLibrealsense.sh```
+
+```./patchUbuntu.sh```
+
+这样深度相机相关驱动就安装结束了，接下来运行
+
+```realsense-viewer```
+
+就会启动相机程序，如果你看到这样的画面，那就说明你成功了。
+
+
+
+![相机程序](https://i.loli.net/2019/08/26/4IEVFq6UgYinp8s.jpg)
+
+
+
+当你成功的完成了上面的所有之后，恭喜你已经成功组装了一个AI智能机器人，接下来就是进一步学习深度学习，了解isaacsdk的使用。
