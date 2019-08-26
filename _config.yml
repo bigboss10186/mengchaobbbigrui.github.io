@@ -2,7 +2,7 @@
 title: 王雨
 SEOTitle: 王雨的博客 | 王雨
 header-img: img/gratisography-animal-crackers-thumbnail-small.jpg
-email: mengchaobbbigrui@gmail.com
+email: 962066696@qq.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 王雨的博客"
 url: "https://bigboss10186.github.io"          # your host, for absolute URL
@@ -18,8 +18,8 @@ sidebar-avatar: /img/4.jpg    # use absolute URL, seeing it's used in both `/` a
 
 # SNS settings
 RSS: false
-zhihu_username:     bigboss
-github_username:    bigboss
+zhihu_username:     bigboss10186
+github_username:    bigboss10186
 
 
 
@@ -61,9 +61,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: c0b1b7053529491e857b                            #生成的clientID
   clientSecret: 72f21830adc17fd40e6b0470ef83658fde4fd351    #生成的clientSecret
-  repo: mengchaobbbigrui.github.io    #仓库名称
-  owner: mengchaobbbigrui    #github用户名
-  admin: mengchaobbbigrui
+  repo: bigboss10186.github.io    #仓库名称
+  owner: bigboss10186    #github用户名
+  admin: bigboss10186
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -99,7 +99,7 @@ friends: [
         title: "GitHub",
         href: "https://github.com/bigboss10186"
     },{
-        title: "简书·BY",
+        title: " ",
         href: " "
     }
 ]
