@@ -1,0 +1,54 @@
+---
+layout:     post
+title:      jetbot制作精讲
+subtitle:   jetson nano
+date:       2019-08-25
+author:     BY Bigboss
+header-img: img/S1xUm2jN2G.jpg
+catalog: 	 true
+tags:
+    - AI
+---
+# 解决Github网速过慢问题 #
+
+​	最近不知道为什么Github没有vpn已经不能正常登陆了，然而就算有vpn，网速不够快的情况下，就会出现下载文件过慢的情况，当好不容易下载到最后时就会网络问题，像下面这样
+
+![1.png](https://i.loli.net/2021/01/16/qSdIiaruTD7vh6b.png)
+
+
+
+所以，给大家推荐一个好用的网站 [Gitee](https://gitee.com/) 
+
+## 第一步 注册账号 ##
+
+
+
+输入姓名，手机号等信息可以创建账号
+
+## 第二步 创建仓库 ##
+
+![2.png](https://i.loli.net/2021/01/16/pgN14mBl7jrMayF.png)
+
+## 第三步 导入已有仓库 ##
+
+![3.png](https://i.loli.net/2021/01/16/lBrAY5auDHL9NUf.png)
+
+
+
+## 第四部 找到Git连接 ##
+
+![4.png](https://i.loli.net/2021/01/16/1pnxi2dfo4eMIR6.png)
+
+## 第五部 复制到新建仓库链接 ##
+
+![5.png](https://i.loli.net/2021/01/16/rqAgFQEVD5Nkd1v.png)
+
+## 第六部 下载即可 ##
+
+![6.png](https://i.loli.net/2021/01/16/bNxKonEhBil37HU.png)
+
+
+
+
+
+这样，你就相当于复制了库到自己的码云里面，然后下载速度和正常网站下载文件的速度一样，查阅库里面相关内容也更为方便。
