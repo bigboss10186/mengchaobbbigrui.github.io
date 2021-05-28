@@ -12,13 +12,13 @@ github_repo: "https://bigboss10186.github.io.git" # you code repository
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/4.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/Head portrait.jpg    # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-zhihu_username:     bigboss-20-20
+
 github_username:    bigboss10186
 
 
